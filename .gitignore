@@ -1,6 +1,9 @@
 
 
-.idea
+.idea/
 
-Loggers/log.txt
+Loggers/log.*
 
+
+/log.txt
+/logs/log.txt
