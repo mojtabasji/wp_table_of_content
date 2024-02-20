@@ -27,3 +27,10 @@ function subtest_show()
     $args['type'] = 'subtest';
     view($file_name, $args);
 }
+
+function show_client_content()
+{
+    $file_name = 'client_side';
+    $args['type'] = 'client';
+    view($file_name, $args);
+}

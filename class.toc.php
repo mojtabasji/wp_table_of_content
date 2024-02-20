@@ -37,9 +37,17 @@ class toc
 
         add_action('admin_menu', array('toc', 'add_admin_menu'));
 
+        add_shortcode('toc', array('toc', 'toc_user_page'));
+
         self::logger("Hooks are initiated");
     }
 
+    public static function toc_user_page()
+    {
+        ob_start();
+        show_client_content();
+        return ob_get_clean();
+    }
 
     public static function add_admin_menu()
     {
@@ -48,7 +56,7 @@ class toc
             'Table of Content',           // Page title
             'Table of Content',                      // Menu title
             'manage_options',           // Capability
-            'my-plugin-slug',      // Menu slug (unique identifier)
+            'toc-user-page',      // Menu slug (unique identifier)
             'management_show',   // Callback function to display the page content
             'dashicons-admin-generic', // Dashicon for the menu icon (optional)
             6                       // Menu position (optional)
