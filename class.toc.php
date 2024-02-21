@@ -2,6 +2,7 @@
 
 require_once plugin_dir_path(__FILE__) . 'Loggers/logger.php';
 require_once plugin_dir_path(__FILE__) . 'view_handler.php';
+require_once plugin_dir_path(__FILE__) . 'baseFunctions.php';
 
 use tableManagement\Loggers\logger;
 
@@ -40,6 +41,8 @@ class toc
         add_shortcode('toc', array('toc', 'toc_user_page'));
 
         self::logger("Hooks are initiated");
+
+        enqueue_font_awesome();
     }
 
     public static function toc_user_page()

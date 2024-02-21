@@ -9,7 +9,6 @@ function view($name, array $args = array())
     }
     load_plugin_textdomain('toc');
     $file = TOC__PLUGIN_DIR . 'views/' . $name . '.php';
-    toc::logger("in view is here --> ");
     include($file);
 }
 
